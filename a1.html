@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click here</button>
+    <script>
+        // add hello on screen when clicked on button
+        // steps : 
+        /*
+         select button bcz working after clicking on button
+         add event listener
+         create element where you want to write elem here in this case we use div
+         add inner text for writing html
+         then select where to write this element for ex body
+         then append in body 
+        */
+        let btnEle = document.querySelector("button");
+        btnEle.addEventListener("click", function(e){
+            let divEle = document.createElement("div");
+            divEle.innerText = "Hello ";
+            let body = document.querySelector("body");
+            body.appendChild(divEle);
+        });
+
+    </script>
+</body>
+</html>
