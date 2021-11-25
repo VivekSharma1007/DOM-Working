@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Sharma</title>
+</head>
+<body>
+    
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            
+        }
+        .all-card{
+            
+           
+            margin-left: 300px;
+            margin-right: 300px;
+            /* justify-content: center;
+            justify-items: center; */
+            display: flex;
+            /* flex-wrap: wrap; */ 
+            
+            
+        }
+        .card{
+            /* margin-left: 100px; */
+            height: 100px;
+            width: 100px;
+            border: 2px dotted black;
+        }
+        .solid{
+            border: 2px solid black;
+        }
+    </style>
+  <div class="all-card">
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card solid"></div>
+    <div class="card"></div>
+  </div>
+    
+
+  <script>
+      let allCards = document.querySelectorAll(".card");
+      let prevCard;
+      allCards.forEach((card) => {
+          card.addEventListener("mouseleave", (e) => {
+               prevCard = e.currentTarget;
+          })
+          card.addEventListener("mouseenter", (e) => {
+                if(!prevCard) return;
+
+                prevCard.classList.remove("solid");
+                allCards.forEach((restCards) => {
+                    if(prevCard != restCards)
+                    {
+                        restCards.classList.add("solid");
+                    }
+                })
+          })
+      })
+  </script>
+
+</body>
+</html>

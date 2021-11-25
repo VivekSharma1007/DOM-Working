@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Sharma</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+         .pink{
+             height: 10rem;
+             width: 15rem;
+             background-color: pink;
+         }
+
+         .blue{
+             height: 5rem;
+             width: 5rem;
+             background-color: blue;
+             margin: auto;
+             margin-top: 2rem;
+          
+         }
+    </style>
+
+    <div class="pink">
+        <div class="blue"></div>
+    </div>
+
+    <script>
+        let pinkElement = document.querySelector(".pink");
+        
+        pinkElement.addEventListener("click", (e) => {
+            if(e.target === e.currentTarget){      // to remove the alert from the blue while clicking (bubbling, capturing and target)
+                alert("pink is clicked");
+            }
+        });
+    </script>
+</body>
+</html>

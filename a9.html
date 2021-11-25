@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Sharma</title>
+</head>
+<body>
+    <style>
+        #inp{
+            position: fixed;
+            left: 200px;
+            top: 200px;
+            
+        }
+        p{
+            position: fixed;
+            left: 250px;
+            top:230px;
+            display: none;
+        }
+    </style>
+
+    <input type="text" id="inp"/>
+    <p>CAPS ON</p>
+
+
+    <script>
+        // show caps on when capslock is on 
+        // write only when shift is clicked
+
+
+        let inputElem = document.querySelector("input");
+        let pEle = document.querySelector("p");
+        let shiftKey;
+
+
+
+        inputElem.addEventListener("keydown", (e) => {
+            if(e.getModifierState("CapsLock"))
+            {
+                pEle.style.display = "block";
+                e.preventDefault();
+            }
+            else
+            {
+                pEle.style.display = "none";
+            }
+
+            if(!shiftKey) e.preventDefault();
+        })
+
+        document.documentElement.addEventListener("keydown", (e) => {
+            let myKey = e.key;
+            if(myKey === "Shift")
+            {
+                shiftKey = true;
+            }
+            
+        })
+
+        document.documentElement.addEventListener("keyup", (e) => {
+            let myKey = e.key;
+            if(myKey === "Shift")
+            {
+                shiftKey = false;
+            }
+        })
+
+    </script>
+</body>
+</html>
